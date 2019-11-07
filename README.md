@@ -1,2 +1,2 @@
 # BI
-Project
+College Project
