@@ -1,16 +1,18 @@
+SET default_storage_engine=InnoDB;
+
 create table DimCustomer (
 	Id int primary key auto_increment
     
 
 	
-) ENGINE=INNODB;
+);
 
 create table DimSeller (
 	Id int primary key auto_increment
     
     
 
-) ENGINE=INNODB;
+);
 
 
 create table DimProduct (
@@ -18,19 +20,19 @@ create table DimProduct (
     
     
    
-)ENGINE=INNODB;
+);
 
 create table DimStore (
 	Id int primary key auto_increment
     
     
-)ENGINE=INNODB;
+);
 
 create table DimDate (
 	Id int primary key auto_increment
     
     
-)ENGINE=INNODB;
+);
 
 create table FactSale (
 	Id int primary key auto_increment,
@@ -42,4 +44,4 @@ create table FactSale (
     StoreId int not null references DimStore(Id),
     DateId int not null references DimDate(Id),
     ProductId int not null references DimProduct(Id)
-)ENGINE=INNODB;
+);
