@@ -1,42 +1,40 @@
-SET default_storage_engine=InnoDB;
-
 create table DimCustomer (
-	Id int primary key auto_increment,
-    FirstName varchar(250),
-    LastName varchar(250),
-    CountryFrenchName varchar(250),
-    CountryEnglishName varchar(250),
-	CityFrenchName varchar(250),
-	CItyEnglishName varchar(250)
+	Id int primary key CLUSTERED ,
+    FirstName nvarchar(250),
+    LastName nvarchar(250),
+    CountryFrenchName nvarchar(250),
+    CountryEnglishName nvarchar(250),
+	CityFrenchName nvarchar(250),
+	CItyEnglishName nvarchar(250)
     
 );
 
 create table DimSeller (
-	Id int primary key auto_increment,
+	Id int primary key CLUSTERED ,
     
-    FirstName varchar(250),
-    LastName varchar(250)
+    FirstName nvarchar(250),
+    LastName nvarchar(250)
 );
 
 
 create table DimProduct (
-	Id int primary key auto_increment,
+	Id int primary key CLUSTERED ,
     
-	ProductFrenchName varchar(250),
-    ProductEnglishName varchar(250),
-    CategoryFrenchName varchar(250),
-    CategoryEnglishName varchar(250)
+	ProductFrenchName nvarchar(250),
+    ProductEnglishName nvarchar(250),
+    CategoryFrenchName nvarchar(250),
+    CategoryEnglishName nvarchar(250)
 );
 
 create table DimStore (
-	Id int primary key auto_increment,
+	Id int primary key CLUSTERED ,
     
-    Name varchar(250),
-    Size int(10) /* Superfice : qunatitÃ© de ventes ? */
+    Name nvarchar(250),
+    Size int  /* Superfice : qunatité de ventes ? */
 );
 
 create table DimDate (
-	Id int primary key auto_increment,
+	Id int primary key CLUSTERED ,
     
     FullDate date,
     Day int,
@@ -44,17 +42,17 @@ create table DimDate (
     Month int,
     Year int,
     
-    DayFrenchName varchar(250),
-    DayEnglishName varchar(250),
-    MonthFrenchName varchar(250),
-    MonthEnglishName varchar(250)    
+    DayFrenchName nvarchar(250),
+    DayEnglishName nvarchar(250),
+    MonthFrenchName nvarchar(250),
+    MonthEnglishName nvarchar(250)    
 );
 
 create table FactSale (
-	Id int primary key auto_increment,
+	Id int primary key CLUSTERED ,
     
     UnitPrice decimal(5,2),
-    Quantity int(3),
+    Quantity int,
     Discount decimal(4,2),
     TotalPrice decimal (10,2),
     
