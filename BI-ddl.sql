@@ -55,6 +55,7 @@ create table FactSale (
     
     UnitPrice decimal(5,2),
     Quantity int(3),
+    Discount decimal(4,2),
     TotalPrice decimal (10,2),
     
 	CustomerId int not null references DimCustomer(Id),
