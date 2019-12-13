@@ -30,22 +30,19 @@ create table DimStore (
 	Id int primary key CLUSTERED ,
     
     Name nvarchar(250),
-    Size int  /* Superfice : qunatité de ventes ? */
+    Size int 
 );
 
 create table DimDate (
-	Id int primary key CLUSTERED ,
-    
-    FullDate date,
-    Day int,
-    Week int,
-    Month int,
-    Year int,
-    
-    DayFrenchName nvarchar(250),
-    DayEnglishName nvarchar(250),
-    MonthFrenchName nvarchar(250),
-    MonthEnglishName nvarchar(250)    
+	Id int primary key CLUSTERED,
+	Date datetime,
+	DayFrenchName varchar(50),
+    DayEnglishName varchar(50),
+    MonthFrenchName varchar(50),
+    MonthEnglishName varchar(50),
+	WeekNumber varchar(50),
+    DayOfWeekNumber varchar(50),
+    DayOfYearNumber varchar(50)
 );
 
 create table FactSale (
